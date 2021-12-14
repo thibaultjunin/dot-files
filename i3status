@@ -1,0 +1,28 @@
+general {
+    colors = true
+    interval = 1
+}
+
+order += "memory"
+order += "disk /"
+order += "ethernet eth0"
+order += "tztime local"
+
+memory {
+    format = ""
+    threshold_degraded = "10%"
+    format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+    format = "%free"
+}
+
+ethernet eth0 {
+    format_up = "E"
+    format_down = "E DOWN"
+}
+
+tztime local {
+    format = "%H:%M:%S"
+}
