@@ -23,9 +23,18 @@ install_zsh() {
 # Install ZSH if not present
 if ! command_exists zsh; then
     install_zsh
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    fi
+fi
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+if [ ! -d "$HOME/.dot-files" ]; then
+    git clone https://github.com/thibaultjunin/dot-files.git "$HOME/.dot-files"
+else
+    cd "$HOME/.dot-files"
+    git pull
+    cd -
 fi
 
 # TODO: Add alias and other configuration files
