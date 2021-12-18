@@ -25,10 +25,12 @@ if ! command_exists zsh; then
     install_zsh
 fi
 
+# Install Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+# Clone this repository for the configuration files
 if [ ! -d "$HOME/.dot-files" ]; then
     git clone https://github.com/thibaultjunin/dot-files.git "$HOME/.dot-files"
 else
@@ -37,7 +39,14 @@ else
     cd -
 fi
 
-# TODO: Add alias and other configuration files
+# Add alias and other configuration files
+
+dot_list="zshrc"
+
+for f in $dot_list; do
+  rm -rf "$HOME/.$f"
+  ln -s "$HOME/.dot-files/$f" "$HOME/.$f"
+done
 
 touch ~/.env_installed
 
