@@ -25,11 +25,11 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 21
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -88,6 +88,8 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR=vim
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -99,3 +101,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias ls='ls --color=auto'
+alias l='ls -alh --color=auto'
+
+alias grep='grep --color -n'
+
+alias t='tree'
+alias ta='tree -a -I .git'
+
+alias compile='gcc -Wall -Wextra -std=c99 -pedantic -Werror -g -fsanitize=address'
+
+alias untar='tar -xvf'
+
