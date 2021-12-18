@@ -41,7 +41,7 @@ fi
 
 # Add alias and other configuration files
 
-dot_list="zshrc"
+dot_list="zshrc" # Space separated list of files
 
 for f in $dot_list; do
   rm -rf "$HOME/.$f"
