@@ -39,6 +39,12 @@ else
     cd -
 fi
 
+# Installing amix/vimrc
+if [ ! -d "$HOME/.vim_runtime" ]; then
+    git clone --depth=1 https://github.com/amix/vimrc.git "$HOME/.vim_runtime"
+    sh "$HOME/.vim_runtime/install_awesome_vimrc.sh"
+fi
+
 # Add alias and other configuration files
 
 dot_list="zshrc" # Space separated list of files
