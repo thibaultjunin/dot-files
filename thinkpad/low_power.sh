@@ -24,8 +24,8 @@ fi
 for i in {1..10}
 do
     echo 1 > /sys/class/leds/tpacpi::power/brightness
-    sleep 1s
+    sleep 0.5
     echo 0 > /sys/class/leds/tpacpi::power/brightness
-    sleep 1s
+    sleep 0.5
 done
 echo 1 > /sys/class/leds/tpacpi::power/brightness
