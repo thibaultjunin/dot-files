@@ -15,6 +15,6 @@ do
     else
         bar="primary-display"
     fi
-    MONITOR="$display" polybar "$bar" &
+    MONITOR="$display" polybar "$bar" &> /dev/null &
 done
 
