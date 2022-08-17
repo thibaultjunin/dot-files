@@ -223,6 +223,9 @@ bindsym $mod+Control+l exec i3lock -t -e -f -i $HOME/.config/lockscreen.png
 bindsym XF86MonBrightnessUp exec "brightnessctl set +10%"
 bindsym XF86MonBrightnessDown exec "brightnessctl set 10%-"
 
+bindsym Print exec "flameshot gui"
+bindsym $mod+Print exec "flameshot full"
+
 # Exec on startup
 exec --no-startup-id $HOME/.config/wallpaper.sh
 exec --no-startup-id flameshot
